@@ -27,7 +27,7 @@ A small Windows Server 2022 domain built in VirtualBox to practise core Active D
 **Problem:** User Anna Meyer (`ameyer`) cannot log in.
 
 **Diagnosis:**
-- Reproduced the issue by entering a wrong password three times.
+-Reproduced the issue by running net use \\DC01\c$ /user:LAB\ameyer <wrong password> three times from the server.
 - Confirmed the account was locked with `Search-ADAccount -LockedOut`.
 - Found the lockout event in Event Viewer (Security log, **Event ID 4740**).
 
